@@ -1,0 +1,15 @@
+build
+.vscode
+/cmake/checkCUDA/compile/*
+!/cmake/checkCUDA/compile/.gitkeep
+/export/screenshots/**/*.png
+/export/screenshots/**/*.jpg
+/export/bgeo/**/*.bgeo
+/export/obj/**/*.obj
+/export/ply/**/*.ply
+/export/abc/**/*.abc
+/export/csv/**/*.csv
+/export/log/**/*.txt
+/export/vtk/**/*.vtk
+/**/*.pyc
+/**/*.blend1
