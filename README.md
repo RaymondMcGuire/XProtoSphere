@@ -1,7 +1,7 @@
 <!--
  * @Author: Xu.WANG
  * @Date: 2021-10-05 21:02:47
- * @LastEditTime: 2023-08-12 16:24:54
+ * @LastEditTime: 2023-08-12 16:28:02
  * @LastEditors: Xu.WANG raymondmgwx@gmail.com
  * @Description: 
 -->
@@ -34,6 +34,9 @@ The results will be exported to the "./export" folder.
 ## Visualization
 
 You can use the blender template in the "./blender_template" folder to visualize the packing results.
+
+![Example](./pics/bunny.png)
+
 
 ## License
 
