@@ -13,6 +13,8 @@
 
 [[Project Page]](https://raymondmcguire.github.io/xprotosphere/)
 
+This project implements an algorithm for packing multi-sized particles inside an arbitrary geometric object. Since this method is an extension version of the ProtoSphere method, we call this algorithm XProtoSphere. For detailed information, please refer to our paper.
+
 ## Environment
 
 - C++, CUDA
