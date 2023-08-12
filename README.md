@@ -11,7 +11,7 @@
 
 ![](./pics/teaser.png)
 
-[[Project Page]](https://raymondmcguire.github.io/xprotosphere/)
+[[Project Page]](https://raymondmcguire.github.io/xprotosphere/) [[Springer Nature Sharedit]](https://rdcu.be/dgafz))
 
 This project implements an algorithm for packing multi-sized particles inside an arbitrary geometric object. Since this method is an extension version of the ProtoSphere method, we call this algorithm XProtoSphere. For detailed information, please refer to our paper.
 
