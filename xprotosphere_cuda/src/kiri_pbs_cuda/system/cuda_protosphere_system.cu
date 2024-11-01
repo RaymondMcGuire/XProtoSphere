@@ -11,11 +11,6 @@
 #include <kiri_pbs_cuda/system/cuda_base_system_gpu.cuh>
 #include <kiri_pbs_cuda/system/cuda_protosphere_system.cuh>
 
-// clang-format off
-#include <glad/glad.h>
-#include <cuda_gl_interop.h>
-// clang-format on
-
 #include <thrust/device_vector.h>
 #include <thrust/host_vector.h>
 

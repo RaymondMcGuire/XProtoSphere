@@ -10,8 +10,9 @@
 #ifndef PBF_PARTICLES_ALEMBIC_MANAGER_HPP
 #define PBF_PARTICLES_ALEMBIC_MANAGER_HPP
 
-#include <abc/alembic-manager-base.h>
 #include <kiri_pbs_cuda/cuda_helper/helper_math.h>
+#include <abc/alembic-manager-base.h>
+
 
 class ParticlesAlembicManager : public AlembicManagerBase {
 public:

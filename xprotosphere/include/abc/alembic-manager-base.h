@@ -9,7 +9,7 @@
  */
 #ifndef PBF_ALEMBIC_MANAGER_BASE_HPP
 #define PBF_ALEMBIC_MANAGER_BASE_HPP
-
+#define __WITH_CUDA__
 #include <Alembic/AbcCoreOgawa/All.h>
 #include <Alembic/AbcGeom/All.h>
 #include <cstdint>
