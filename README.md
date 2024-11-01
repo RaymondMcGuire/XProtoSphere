@@ -37,9 +37,10 @@ git submodule update --init --recursive
 
 2. Install required software:
 
+- Install Visual Studio 2022 Community
 - Install CUDA 
 - Install CMake
-- Install Visual Studio 2022
+
 
 ## How to Build and Run
 
