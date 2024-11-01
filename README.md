@@ -15,21 +15,47 @@
 
 This project implements an algorithm for packing multi-sized particles inside an arbitrary geometric object. Since this method is an extension version of the ProtoSphere method, we call this algorithm XProtoSphere. For detailed information, please refer to our paper.
 
-## Environment
+## Environment Requirements
 
-- C++, CUDA
-- Install [CUDA](https://developer.nvidia.com/cuda-downloads) and [Cmake](https://cmake.org/download/) first
+- C++17 or higher
+- [CUDA](https://developer.nvidia.com/cuda-downloads) (Tested with CUDA 12.3 and 12.6)
+- [Cmake](https://cmake.org/download/) 3.26 (recommended, newer versions may cause compatibility issues)
 - Visual Studio 2022
+- Blender 4.0 (for visualization)
 
-## How to run
+## Installation
+
+1. Clone the repository with submodules:
+```bash
+git clone --recursive https://github.com/RaymondMcGuire/XProtoSphere.git
+```
+
+If you forgot to use --recursive, you can initialize submodules manually:
+```bash
+git submodule update --init --recursive
+```
+
+2. Install required software:
+
+- Install CUDA 
+- Install CMake
+- Install Visual Studio 2022
+
+## How to Build and Run
 
 ### For Windows
 
-- cd to ./scripts folder
-- run the bat file
- - build_vs2022_win64.bat
- - compile_vs2022_release.bat
- - run_example.bat
+1. Navigate to the scripts folder:
+```bash
+cd ./scripts
+```
+
+2. Run the following batch files in order:
+```bash
+build_vs2022_win64.bat
+compile_vs2022_release.bat
+run_example.bat
+```
 
 The results will be exported to the "./export" folder.
 
