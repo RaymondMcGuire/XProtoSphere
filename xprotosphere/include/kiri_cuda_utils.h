@@ -20,6 +20,8 @@ class KiriCudaUtils {
 public:
   static void ExportCSVFileFromGPU(String Folder, String FileName,
                                    float *Radius, UInt numOfParticles);
+  static void ExportCSVFileFromGPU(String Folder, String FileName,
+                                 float3 *Positions, float *Radius, UInt numOfParticles);
 
   static void ExportBgeoFileFromGPU(String Folder, String FileName,
                                     float3 *Positions, float *Radius,

@@ -248,12 +248,17 @@ int main(int argc, char *argv[]) {
       KIRI_LOG_INFO("Current Insert Step={0}, Elapsed Time={1}",
                     current_insert_step, inserted_time);
 
-      // final export
+      // export
       KiriCudaUtils::ExportBgeoFileFromGPU(
           "protosphere", input_model, system->GetInsertedPositions(),
           system->GetInsertedRadius(), system->GetInsertedSize());
 
-      // radius & target radius export
+      // position
+      KiriCudaUtils::ExportCSVFileFromGPU(
+          "protosphere", input_model + "_pos_and_size", system->GetInsertedPositions(),system->GetInsertedRadius(),
+          system->GetInsertedSize());
+
+      // radius & target radius
       KiriCudaUtils::ExportCSVFileFromGPU(
           "protosphere", input_model + "_radius", system->GetInsertedRadius(),
           system->GetInsertedSize());

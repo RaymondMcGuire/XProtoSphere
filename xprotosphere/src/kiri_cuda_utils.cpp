@@ -280,6 +280,53 @@ std::vector<float4> KiriCudaUtils::ReadMultiBgeoFilesForGPU(String Folder,
   return pos_array;
 }
 
+
+void KiriCudaUtils::ExportCSVFileFromGPU(String Folder, String FileName,
+                                 float3 *Positions, float *Radius, UInt numOfParticles)
+{
+    String exportPath = String(EXPORT_PATH) + "csv/" + Folder;
+    String exportFile = exportPath + "/" + FileName + ".csv";
+
+    try {
+        std::error_code ec;
+        std::filesystem::create_directories(exportPath, ec);
+
+        // transfer GPU data to CPU
+        uint fBytes = numOfParticles * sizeof(float);
+        uint f3Bytes = numOfParticles * sizeof(float3);
+
+        float *cpuRadius = (float *)malloc(fBytes);
+        float3 *cpuPositions = (float3 *)malloc(f3Bytes);
+
+        cudaMemcpy(cpuRadius, Radius, fBytes, cudaMemcpyDeviceToHost);
+        cudaMemcpy(cpuPositions, Positions, f3Bytes, cudaMemcpyDeviceToHost);
+
+        std::fstream vfile;
+        vfile.open(exportFile.c_str(), std::ios_base::out);
+        
+        // Write CSV header
+        vfile << "x,y,z,radius" << std::endl;
+        
+        // Write data rows
+        for (auto i = 0; i < numOfParticles; i++) {
+            vfile << cpuPositions[i].x << "," 
+                 << cpuPositions[i].y << "," 
+                 << cpuPositions[i].z << "," 
+                 << cpuRadius[i] << std::endl;
+        }
+
+        vfile.close();
+
+        // Free allocated memory
+        free(cpuRadius);
+        free(cpuPositions);
+
+        KIRI_LOG_DEBUG("Successfully Saved CSV File: {0}", exportFile);
+    } catch (std::exception &e) {
+        std::cout << "Error exporting CSV: " << e.what() << std::endl;
+    }
+}
+
 void KiriCudaUtils::ExportCSVFileFromGPU(String Folder, String FileName,
                                          float *Radius, UInt numOfParticles) {
   String exportPath = String(EXPORT_PATH) + "csv/" + Folder;
