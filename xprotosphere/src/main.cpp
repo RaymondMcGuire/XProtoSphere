@@ -21,11 +21,11 @@ using namespace KIRI;
 
 int main(int argc, char *argv[]) {
 
-  if (argc != 8) {
+  if (argc != 9) {
     std::cout << "Usage: " << argv[0]
               << "-input_model_name -input_model_scale -distribution_type "
                  "-protosphere_max_iter "
-                 "-enable_dem_relax -overlap_ratio_thresold -dsr_max_iter"
+                 "-enable_dem_relax -overlap_ratio_thresold -dsr_max_iter -enable_dist_constrain"
               << " " << argc << std::endl;
     return 1;
   }
@@ -37,6 +37,7 @@ int main(int argc, char *argv[]) {
   bool enable_dem_relax = static_cast<bool>(std::stoi(argv[5]));
   float overlap_ratio = std::stof(argv[6]);
   int dsr_max_iter = std::stoi(argv[7]);
+  bool enable_dist_constaint = static_cast<bool>(std::stoi(argv[8]));
 
   if (!enable_dem_relax) {
     overlap_ratio = 0.f;
@@ -199,7 +200,7 @@ int main(int argc, char *argv[]) {
   auto system = std::make_shared<CudaProtoSphereSystem>(
       protosphere_particles, solver, radius_range, radius_range_prob,
       mesh3d->meshData()->volume(), overlap_ratio, xprotosphere_particle_size,
-      protosphere_max_iter, enable_dem_relax, dsr_max_iter);
+      protosphere_max_iter, enable_dem_relax, enable_dist_constaint, dsr_max_iter);
 
   KiriTimer timer;
   while (true) {

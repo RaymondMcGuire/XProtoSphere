@@ -26,7 +26,7 @@ public:
                         const std::vector<float> radiusRangeProb,
                         float boundaryVolume, float acceptOverlapRatio,
                         float halfGridSize, int maxProtoSphereIteration,
-                        bool enableDEMRelax, int maxRelaxStepNum);
+                        bool enableDEMRelax, bool enableDistConstrain, int maxRelaxStepNum);
 
   CudaProtoSphereSystem(const CudaProtoSphereSystem &) = delete;
   CudaProtoSphereSystem &operator=(const CudaProtoSphereSystem &) = delete;
@@ -71,6 +71,7 @@ private:
   int mMaxRelaxStepNum = 1000;
   float mHalfGridSize = 0.01f;
   bool mEnableDEMRelax = false;
+  bool mInsertDistConstrain = false;
 
   int mMaxProtoSphereIterationNum = 5;
 
@@ -101,6 +102,9 @@ private:
   void EstimateIdealTotalNum();
   void RunProtoSphereSampler();
   void RunDEMMSSampler();
+  void AdjustDistributionProbability();
+  void CalculateAndLogStatistics();
+  void ReinitializeParticles(size_t num);
 };
 
 typedef SharedPtr<CudaProtoSphereSystem> CudaProtoSphereSystemPtr;
