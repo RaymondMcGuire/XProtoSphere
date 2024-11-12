@@ -4,7 +4,7 @@ cd ..
 
 set input_model_name="cube"
 set input_model_scale=0.3
-set distribution_type="A"
+set distribution_type="C"
 set protosphere_max_iter=10
 set enable_dem_relax=1
 set overlap_ratio=0.6
