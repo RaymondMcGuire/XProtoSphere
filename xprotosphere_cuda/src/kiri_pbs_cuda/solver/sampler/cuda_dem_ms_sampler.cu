@@ -12,9 +12,10 @@
 #include <kiri_pbs_cuda/solver/sampler/cuda_dem_ms_sampler_gpu.cuh>
 
 #include <kiri_pbs_cuda/thrust_helper/helper_thrust.cuh>
-
 #include <thrust/device_ptr.h>
 #include <thrust/transform_reduce.h>
+#include <thrust/extrema.h>
+#include <thrust/execution_policy.h>
 namespace KIRI {
 
 void CudaDEMMultiSizedSampler::ComputeMRDemLinearMomentum(

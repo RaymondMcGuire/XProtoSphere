@@ -12,6 +12,8 @@
 #include <kiri_pbs_cuda/solver/sampler/cuda_protosphere_sampler_gpu.cuh>
 #include <kiri_pbs_cuda/thrust_helper/helper_thrust.cuh>
 
+#include <thrust/extrema.h>
+#include <thrust/execution_policy.h>
 #include <thrust/device_ptr.h>
 namespace KIRI {
 
