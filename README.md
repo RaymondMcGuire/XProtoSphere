@@ -18,7 +18,7 @@ This project implements an algorithm for packing multi-sized particles inside an
 ## Environment Requirements
 
 - C++17 or higher
-- [CUDA](https://developer.nvidia.com/cuda-downloads) (Tested with CUDA 12.3 and 12.6)
+- [CUDA](https://developer.nvidia.com/cuda-downloads) (Tested with CUDA 12.8)
 - [Cmake](https://cmake.org/download/) 3.26 (recommended, newer versions may cause compatibility issues)
 - Visual Studio 2022
 - Blender 4.0 (for visualization)
